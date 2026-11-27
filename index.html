@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment 1 - Milestone</title>
   <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="script.js?v=4"></script>
 </head>
 <body class="body-container">
 
@@ -22,20 +23,198 @@
     </nav>
   </header>
   
+  <!-- Homepage Content Area -->
+   <article class="homepage-container">
+    <section class="promo-grid">
+      <article class="promo-hero">
+        <div class="promo-copy">
+          <p class="eyebrow">THE EVERYDAY EDIT</p>
+          <h1>Little things.
+            <br>
+            Big feel-good energy.
+          </h1>
+          <p>Find your new favorite beauty and fragrance essentials.</p>
+          <a class="shop-button" href="#">Shop the collection</a>
+        </div>
+        <img src="https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp" alt="Eyeshadow palette with mirror">
+
+      </article>
+      
+      <div class="promo-side">
+        <article class="promo-title-promo-beauty">
+          <img src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt="Lash Princess mascara">
+          <div>
+            <p class="eyebrow">BEAUTY FAVORITES</p>
+            <h2>Make a lovely impression</h2>
+            <a href="#">Explore beauty</a>
+          </div>
+        </article>
+
+        
+        <article class="promo-title-promo-fragrance">
+          <img src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp" alt="Calvin Klein CK One fragrance">
+          <div>
+            <p class="eyebrow">SCENT OF THE SEASON</p>
+            <h2>A fresh new mood</h2>
+            <a href="#">Explore fragrance</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="homepage-products" aria-label="Featured products">
+      <div class="homepage-product-grid">
+      </div>
+    </section>
+   </article>
+
 
   <!-- 3. Primary Content Area -->
-  <main class="main-product-container">
+  <article class="main-product-container hidden">
     <h2>Browse</h2>
     <div class="product-grid">
     </div>
-    
-  </main>
+    <button id="prevBtn">Previous</button>
+    <span id="pageInfo"></span>
+    <button id="nxtBtn">Next</button>
+  </article>
 
-  <!-- 5. Footer Section -->
-  <footer>
-    <p>&copy;https://github.com/Sjarj282/COMP-3512-Assignment-01-Milestone</p>
+  <!-- Shopping Cart Area -->
+  <article class="shopping-cart hidden" aria-labelledby="shopping-cart-title">
+    <h1 id="shopping-cart-title">Shopping Cart</h1>
+
+    <table class="cart-items">
+      <thead>
+        <tr>
+          <th class="cart-item-heading" scope="col">Items</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cart-item">
+            <button class="remove-cart-item" type="button" aria-label="Remove Essence Mascara Lash Princess">−</button>
+            <img src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt="">
+            <span>Essence Mascara Lash Princess</span>
+          </td>
+          <td>$80.00</td>
+          <td>2</td>
+          <td><strong>$160.00</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-bottom">
+      <section class="shipping-options" aria-labelledby="shipping-title">
+        <h2 id="shipping-title">Shipping</h2>
+        <div class="shipping-fields">
+          <label for="shipping-method">Shipping method</label>
+          <select id="shipping-method" name="shipping-method">
+            <option>Standard</option>
+            <option>Express</option>
+          </select>
+
+          <label for="shipping-region">Shipping region</label>
+          <select id="shipping-region" name="shipping-region">
+            <option>Canada</option>
+            <option>United States</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="cart-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Summary</h2>
+        <dl>
+          <div>
+            <dt>Merchandise</dt>
+            <dd>$400.00</dd>
+          </div>
+          <div>
+            <dt>Shipping</dt>
+            <dd>$40.00</dd>
+          </div>
+          <div>
+            <dt>Tax</dt>
+            <dd>$20.00</dd>
+          </div>
+          <div class="cart-total">
+            <dt>Total</dt>
+            <dd>$460.00</dd>
+          </div>
+        </dl>
+        <button class="checkout-button" type="button">Checkout</button>
+      </section>
+    </div>
+  </article>
+
+  <!-- Product Detail Area -->
+  <article class="product-detail hidden" aria-labelledby="detail-product-title">
+    <nav class="product-breadcrumb" aria-label="Breadcrumb">
+      <a href="#">Home</a>
+      <span aria-hidden="true">&gt;</span>
+      <a href="#">Beauty</a>
+      <span aria-hidden="true">&gt;</span>
+      <span>Product Title</span>
+    </nav>
+
+    <!-- Product info gets appended into here -->
+    <div class="product-detail-main">
+    </div>
+
+    <div class="product-detail-tabs">
+      <input type="radio" name="product-tab" id="description-tab" checked>
+      <label for="description-tab">Specifications</label>
+      <input type="radio" name="product-tab" id="reviews-tab">
+      <label for="reviews-tab">Reviews</label>
+
+      <section class="detail-tab-panel description-panel" aria-labelledby="description-tab">
+        <h2>Specification Description</h2>
+        <p>Weight: 11kg</p>
+        <p>Dimensions: 20 30 10cm</p>
+        <p>Warranty: yes </p>
+        <p>Shipping information: </p>
+        <p> Return policy: </p>
+      </section>
+      <section class="detail-tab-panel reviews-panel" aria-labelledby="reviews-tab">
+        <h2>Customer Reviews</h2>
+        <!-- <p>There are no reviews for this product yet.</p> -->
+        <div class="product-reviews-list">
+          <article class="product-review">
+            <p class="review-author">Tyler</p>
+            <span class="review-rating">★★★★★</span>
+            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
+            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
+          </article>
+          <article class="product-review">
+            <p class="review-author">Tyler</p>
+            <span class="review-rating">★★★★★</span>
+            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
+            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
+          </article>
+          <article class="product-review">
+            <p class="review-author">Tyler</p>
+            <span class="review-rating">★★★★★</span>
+            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
+            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
+          </article>
+          <article class="product-review">
+            <p class="review-author">Tyler</p>
+            <span class="review-rating">★★★★★</span>
+            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
+            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </article>
+
+    <!-- Homepage footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Easy Commerce</p>
+    <a href="https://github.com/Sjarj282/COMP-3512-Assignment02">Project on GitHub</a>
   </footer>
-  <script type="module" src="script.js"></script>
 
 </body>
 </html>
