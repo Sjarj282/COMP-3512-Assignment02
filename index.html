@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assignment 1 - Milestone</title>
   <link rel="stylesheet" href="css/style.css">
-  <script type="module" src="script.js?v=4"></script>
+  <script type="module" src="script.js?v=8"></script>
 </head>
 <body class="body-container">
 
@@ -15,10 +15,10 @@
 
     <nav class="navbar">
         <ul>
-            <li><a href="#">Home </a></li>
-            <li><a href="#">Browse </a></li>
+            <li><a href="#" data-page="home">Home </a></li>
+            <li><a href="#"data-page="browse">Browse </a></li>
             <li><a href="#">About</a></li>
-            <li class="cart"><a href="#">Cart</a></li>
+            <li class="cart"><a href="#" data-page="cart">Cart<span class="cart-icon hidden"></span></a></li>
         </ul>
     </nav>
   </header>
@@ -92,19 +92,10 @@
           <th scope="col">Subtotal</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td class="cart-item">
-            <button class="remove-cart-item" type="button" aria-label="Remove Essence Mascara Lash Princess">−</button>
-            <img src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt="">
-            <span>Essence Mascara Lash Princess</span>
-          </td>
-          <td>$80.00</td>
-          <td>2</td>
-          <td><strong>$160.00</strong></td>
-        </tr>
+      <tbody class="item-list">
       </tbody>
     </table>
+    <p class="no-items-in-cart">There are no items in your shopping cart.</p>
 
     <div class="cart-bottom">
       <section class="shipping-options" aria-labelledby="shipping-title">
@@ -114,12 +105,14 @@
           <select id="shipping-method" name="shipping-method">
             <option>Standard</option>
             <option>Express</option>
+            <option>Priority</option>
           </select>
 
           <label for="shipping-region">Shipping region</label>
           <select id="shipping-region" name="shipping-region">
             <option>Canada</option>
             <option>United States</option>
+            <option>International</option>
           </select>
         </div>
       </section>
@@ -129,19 +122,19 @@
         <dl>
           <div>
             <dt>Merchandise</dt>
-            <dd>$400.00</dd>
+            <dd class="total-merchandise-price">$0.00</dd>
           </div>
           <div>
             <dt>Shipping</dt>
-            <dd>$40.00</dd>
+            <dd class="shipping-cost">$0.00</dd>
           </div>
           <div>
             <dt>Tax</dt>
-            <dd>$20.00</dd>
+            <dd class="tax-charge">$0.00</dd>
           </div>
           <div class="cart-total">
             <dt>Total</dt>
-            <dd>$460.00</dd>
+            <dd class="cart-total-price">$0.00</dd>
           </div>
         </dl>
         <button class="checkout-button" type="button">Checkout</button>
@@ -170,41 +163,11 @@
       <label for="reviews-tab">Reviews</label>
 
       <section class="detail-tab-panel description-panel" aria-labelledby="description-tab">
-        <h2>Specification Description</h2>
-        <p>Weight: 11kg</p>
-        <p>Dimensions: 20 30 10cm</p>
-        <p>Warranty: yes </p>
-        <p>Shipping information: </p>
-        <p> Return policy: </p>
       </section>
       <section class="detail-tab-panel reviews-panel" aria-labelledby="reviews-tab">
         <h2>Customer Reviews</h2>
         <!-- <p>There are no reviews for this product yet.</p> -->
         <div class="product-reviews-list">
-          <article class="product-review">
-            <p class="review-author">Tyler</p>
-            <span class="review-rating">★★★★★</span>
-            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
-            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
-          </article>
-          <article class="product-review">
-            <p class="review-author">Tyler</p>
-            <span class="review-rating">★★★★★</span>
-            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
-            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
-          </article>
-          <article class="product-review">
-            <p class="review-author">Tyler</p>
-            <span class="review-rating">★★★★★</span>
-            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
-            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
-          </article>
-          <article class="product-review">
-            <p class="review-author">Tyler</p>
-            <span class="review-rating">★★★★★</span>
-            <p class="review-date">Reviewed in Canada on November 4, 2026</p>
-            <p class="review-text">I’ve been really happy with these shoes. They fit true to size, so I had no issues ordering my usual size and didn’t need to worry about exchanging them.</p>
-          </article>
         </div>
       </section>
     </div>
